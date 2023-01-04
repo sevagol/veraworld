@@ -15,7 +15,7 @@ const AddFilm = () => {
 const [title, setTitle] = React.useState("");
 const [author, setAuthor] = React.useState("");
 const [description, setDescription] = React.useState("");
-const [status, setStatus] = React.useState("pending");
+const [status, setStatus] = React.useState("Не смотрели");
 const [isLoading, setIsLoading] = React.useState(false);
 const toast = useToast();
 const { isLoggedIn, user } = useAuth();

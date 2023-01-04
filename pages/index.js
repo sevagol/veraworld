@@ -41,20 +41,7 @@ return (
   </BreadcrumbItem>
   <Auth />
 </Breadcrumb>
-<Popover>
-  <PopoverTrigger>
-    <Button>Добавить кинчик</Button>
-  </PopoverTrigger>
-  <Portal>
-    <PopoverContent>
-      <PopoverArrow />
-      <PopoverCloseButton />
-      <PopoverBody>
-        <AddFilm/>
-      </PopoverBody>
-    </PopoverContent>
-  </Portal>
-</Popover>
+
 </Container>
 )
 }

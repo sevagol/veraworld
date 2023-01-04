@@ -45,12 +45,12 @@ return (
 <Box w="40%" margin={"0 auto"} display="block" mt={5}>
 <Stack direction="column">
 <Input
-placeholder="Title"
+placeholder="Хочу всего и много"
 value={title}
 onChange={(e) => setTitle(e.target.value)}
 />
 <Textarea
-placeholder="Description"
+placeholder="Хочу и буду"
 value={description}
 onChange={(e) => setDescription(e.target.value)}
 />

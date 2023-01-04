@@ -6,8 +6,25 @@
     "start": "next start"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.4.6",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@hookform/resolvers": "^2.9.10",
+    "bootstrap": "^5.2.3",
+    "firebase": "^9.15.0",
+    "framer-motion": "^8.1.7",
+    "google-spreadsheet": "^3.3.0",
+    "googleapis": "^110.0.0",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-bootstrap": "^2.7.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.41.4",
+    "react-icons": "^4.7.1",
+    "sass": "^1.57.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "typescript": "4.9.4"
   }
 }

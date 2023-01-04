@@ -42,7 +42,7 @@ setStatus("pending");
 toast({ title: "Todo created successfully", status: "success" });
 };
 return (
-<Box w="40%" margin={"0 auto"} display="block" mt={5}>
+<Box w="100%" margin={"0 auto"} display="block" mt={5}>
 <Stack direction="column">
 <Input
 placeholder="Хочу всего и много"
@@ -50,7 +50,7 @@ value={title}
 onChange={(e) => setTitle(e.target.value)}
 />
 <Textarea
-placeholder="Хочу и буду"
+placeholder="Опиши, как это будет"
 value={description}
 onChange={(e) => setDescription(e.target.value)}
 />
@@ -59,13 +59,13 @@ onChange={(e) => setDescription(e.target.value)}
 value={"pending"}
 style={{ color: "yellow", fontWeight: "bold" }}
 >
-Pending ⌛
+Ещё хочу ⌛
 </option>
 <option
 value={"completed"}
 style={{ color: "green", fontWeight: "bold" }}
 >
-Completed ✅
+Сбылось ✅
 </option>
 </Select>
 <Button

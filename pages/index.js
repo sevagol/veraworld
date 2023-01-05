@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { Box } from "@chakra-ui/react"
 import {
     Menu,
     MenuButton,
@@ -15,10 +16,15 @@ import {
     MenuGroup,
     MenuOptionGroup,
     MenuDivider,
+    Flex,
+    Spacer,
   } from '@chakra-ui/react'
+
+
 
 export default function Home() {
 return (
+
 <Container maxW="7xl">
 <Menu>
   <MenuButton

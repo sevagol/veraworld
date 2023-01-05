@@ -4,44 +4,39 @@ import Auth from "../components/Auth";
 import TodoList from "../components/TodoList";
 import Link from "next/link";
 import { Button } from "@chakra-ui/react";
-import { Portal } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbSeparator,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
   } from '@chakra-ui/react'
-  import {
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-    PopoverHeader,
-    PopoverBody,
-    PopoverFooter,
-    PopoverArrow,
-    PopoverCloseButton,
-    PopoverAnchor,
-  } from '@chakra-ui/react'
-import AddFilm from "../components/AddFilm";
 
 export default function Home() {
 return (
 <Container maxW="7xl">
-<Breadcrumb>
-  <BreadcrumbItem>
-    <BreadcrumbLink href='/todo'>Планы</BreadcrumbLink>
-  </BreadcrumbItem>
-
-  <BreadcrumbItem>
-    <BreadcrumbLink href='/film'>Фильмы</BreadcrumbLink>
-  </BreadcrumbItem>
-
-  <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href='/'>Домой</BreadcrumbLink>
-  </BreadcrumbItem>
-  <Auth />
-</Breadcrumb>
-
+<Menu>
+  <MenuButton
+    as={IconButton}
+    aria-label='Options'
+    icon={<HamburgerIcon />}
+    variant='outline'
+  />
+  <MenuList>
+    <MenuItem>
+      <Link href='/film'>Фильмы</Link>
+    </MenuItem>
+    <MenuItem >
+    <Link href='/todo'>Мечты</Link>
+    </MenuItem>
+  </MenuList>
+</Menu>
+    <Auth/>
 </Container>
 )
 }

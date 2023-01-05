@@ -18,6 +18,7 @@ import {
     MenuDivider,
     Flex,
     Spacer,
+    Heading
   } from '@chakra-ui/react'
 
 
@@ -26,6 +27,8 @@ export default function Home() {
 return (
 
 <Container maxW="7xl">
+<Flex>
+    <Box p="2">
 <Menu>
   <MenuButton
     as={IconButton}
@@ -42,7 +45,12 @@ return (
     </MenuItem>
   </MenuList>
 </Menu>
+</Box>
+<Spacer/>
+<Box>
     <Auth/>
+    </Box>
+    </Flex>
 </Container>
 )
 }

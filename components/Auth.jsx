@@ -4,7 +4,7 @@ import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FaGoogle, FaMoon, FaSun } from "react-icons/fa";
 import { auth } from "../firebase";
 import useAuth from "../hooks/useAuth";
-import { Avatar, AvatarBadge, AvatarGroup, Wrap, WrapItem } from "@chakra-ui/react"; 
+import { Avatar, AvatarBadge, AvatarGroup, Wrap, WrapItem, Grid } from "@chakra-ui/react"; 
 const Auth = () => {
 const { toggleColorMode, colorMode } = useColorMode();
 const { isLoggedIn, user } = useAuth();
@@ -31,10 +31,12 @@ const credential = GoogleAuthProvider.credentialFromError(error);
 });
 };
 return (
-<Box top="5%" right="5%">
+<Grid templateColumns="repeat(3, 1fr)" gap={1}>
+    <Box>
 <Button onClick={() => toggleColorMode()}>
 {colorMode == "dark" ? <FaSun /> : <FaMoon />}
 </Button>{" "}
+    </Box>
 {isLoggedIn && (
 <>
 <Wrap>
@@ -52,7 +54,7 @@ Logout
 Login with Google
 </Button>
 )}
-</Box>
+</Grid>
 );
 };
 export default Auth;

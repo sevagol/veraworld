@@ -52,7 +52,7 @@ export default function App() {
           borderColor: colors.purple.default,
           lineTension: 0.2,
           pointBackgroundColor: colors.purple.default,
-          pointRadius: 3
+          pointRadius: 4
         }
       ]
     };

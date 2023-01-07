@@ -7,6 +7,7 @@ import { Button } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { Box } from "@chakra-ui/react"
+import Script from "next/script";
 import {
     Menu,
     MenuButton,

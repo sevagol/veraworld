@@ -11,11 +11,18 @@ import {
     import { collection, onSnapshot, query, where } from "firebase/firestore";
     import { db } from "../firebase";
     import { FaToggleOff, FaToggleOn, FaTrash } from "react-icons/fa";
+    import { Stack } from "@chakra-ui/react";
     import { deleteFilm, toggleFilmStatus } from "../api/films";
-    const FilmsList = () => {
+    const RandFilm = () => {
     const [films, setFilms] = React.useState([]);
     const {  user } = useAuth();
     const toast = useToast();
+    function random_item(films)
+{
+  
+return films[Math.floor(Math.random()*films.length)];
+     
+}
     const refreshData = () => {
     if (!user) {
     setFilms([]);
@@ -47,63 +54,14 @@ import {
     status: newStatus == "Глянули" ? "success" : "warning",
     });
     };
+    const item = random_item(films)
     return (
-    <Box mt={5}>
-    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
-    {films &&
-    films.map((film) => (
-    <Box
-    p={3}
-    boxShadow="2xl"
-    shadow={"dark-lg"}
-    transition="0.2s"
-    _hover={{ boxShadow: "sm" }}
-    rounded="md"
-    >
-    <Heading as="h3" fontSize={"xl"}>
-    {film.title}{" "}
-    <Badge
-    color="red.500"
-    bg="inherit"
-    transition={"0.2s"}
-    _hover={{
-    bg: "inherit",
-    transform: "scale(1.2)",
-    }}
-    float="right"
-    size="xs"
-    onClick={() => handleFilmDelete(film.id)}
-    >
-    <FaTrash />
-    </Badge>
-    <Badge
-    color={film.status == "Не смотрели" ? "gray.500" : "green.500"}
-    bg="inherit"
-    transition={"0.2s"}
-    _hover={{
-    bg: "inherit",
-    transform: "scale(1.2)",
-    }}
-    float="right"
-    size="xs"
-    onClick={() => handleToggle(film.id, film.status)}
-    >
-    {film.status == "Не смотрели" ? <FaToggleOff /> : <FaToggleOn />}
-    </Badge>
-    <Badge
-    float="right"
-    opacity="0.8"
-    bg={film.status == "Не смотрели" ? "yellow.500" : "green.500"}
-    >
-    {film.status}
-    </Badge>
-    </Heading>
-    <Text>{film.author}</Text>
-    <Text>{film.description}</Text>
-    </Box>
-    ))}
-    </SimpleGrid>
-    </Box>
+        <Stack direction='row'>
+        <Badge>Default</Badge>
+        <Badge colorScheme='green'>{random_item(films).title}</Badge>
+        <Badge colorScheme='red'>Removed</Badge>
+        <Badge colorScheme='purple'>New</Badge>
+      </Stack>
     );
     };
-    export default FilmsList;
+    export default RandFilm;

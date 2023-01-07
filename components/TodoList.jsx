@@ -58,6 +58,7 @@ import {
     shadow={"dark-lg"}
     transition="0.2s"
     _hover={{ boxShadow: "sm" }}
+    rounded="md"
     >
     <Heading as="h3" fontSize={"xl"}>
     {todo.title}{" "}
